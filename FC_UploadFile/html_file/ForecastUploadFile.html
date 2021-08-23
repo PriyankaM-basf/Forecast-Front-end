@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\css_file\ForecastUploadFile.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <title>Forecast File Upload</title>
+
+</head>
+<body>
+   <!--header basf logo content-->
+<div id="headercontent">
+<table width = "100%" border = "0">
+         
+         <tr>
+            <td colspan = "2" bgcolor = "#014A97">
+                <img src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\image\BASF_logo.jpg" alt="logo" width="10%" />
+            </td>
+         </tr>
+     </table>
+</div>
+<!-- header basf logo content end-->
+
+<!-- title content-->
+   <div class="container title-information" style="margin-bottom: 2px !important;">
+
+    <div class="title">
+      <p>
+    <span  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;Forecast Tool
+    </p>
+</div>
+</div>   
+<div class="nagivation">
+   <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_ViewInfo\Html_file\ViewInfo.html"  style="text-decoration:none;">Data Lookup</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Html_File\FunctionForecastSummary.html" style="text-decoration:none;">Forecast Summary</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\html_file\ForecastUploadFile.html"  style="text-decoration:none;" class="active">Excel Upload</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Forecast_Form\html_file\forecastDashboard.html" style="text-decoration:none;" >Forecast Adjustment</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Html_file\CostCenterResponsible.html" style="text-decoration:none;">Cost Center Delegates</a>
+ </div>
+<!-- sub title content-->
+  <div class="container subtitle-information" style="margin-bottom:0px !important">
+
+    <div class="subtitle">
+      <p>
+    <span class="glyphicon glyphicon-list-alt"  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Excel Upload
+    </p>
+</div>
+</div>
+
+<!--title content end-->
+
+<!--file upload list starts-->
+<form action="" method="" id="fcExcelUploadFormId">
+<div class="container">
+
+  <!--SKF to Internal Cost Centre-->
+<div class="item-container">
+  <div class="attribute-container SkfToCC-information">   
+  <div class="attribute">SKF to Internal Cost Centre</div> 
+
+<button type="button" class="uploadbtn" id="skfToInterCCbtn" 
+data-toggle="modal" data-target="#myUploadFirstFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button> 
+
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\SKF to Internal\SKF to Inernal Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>SKF to Internal Cost Centre template</span>
+</span></a>
+
+<input id="firstfilename" type="text" onmouseover="firstUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" />
+
+</div>
+</div>
+<!--SKF to Internal Cost Centre ends-->
+
+<!--C to CC (Manual) starts-->
+<div class="item-container">
+ <div class="attribute-container CCToCC-information">   
+  <div class="attribute">CC to CC (Manual)</div> 
+
+<button type="button" class="uploadbtn" id="ccToCCbtn" data-toggle="modal" data-target="#myUploadSecFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span></button> 
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\CC to CC Manual\Manual Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>Manual file template</span>
+</span></a>
+
+<input id="secfilename" type="text" onmouseover="secUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" />
+
+</div>
+</div>
+<!--C to CC (Manual) ends-->
+
+<!--CC to SKF starts-->
+<div class="item-container">
+ <div class="attribute-container CCToSkf-information">   
+  <div class="attribute">CC to SKF</div> 
+<button type="button" class="uploadbtn" id="ccToSkfbtn" data-toggle="modal" data-target="#myUploadThirdFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button> 
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\CC To SKF\CC to SKF Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>SKF file template</span>
+</span></a>
+
+<input id="thirdfilename" type="text" onmouseover="thirdUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" />
+
+</div>
+</div>
+<!--CC to SKF ends-->
+
+<!--CC Master starts-->
+<div class="item-container">
+ <div class="attribute-container CCMaster-information">   
+  <div class="attribute">CC Master</div>
+<button type="button" class="uploadbtn" id="ccMasterbtn" data-toggle="modal" data-target="#myUploadFourthFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button>
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\CC Master\Master Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>Master file template</span>
+</span></a>
+
+<input id="fourthfilename" type="text" onmouseover="fourthUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" /> 
+</div>
+</div>
+<!--CC Master ends-->
+
+<!--Data file SAP to Intrexx starts-->
+<div class="item-container">
+ <div class="attribute-container dataSapToIntrexx-information">   
+  <div class="attribute" style="width: 160px !important">Data file SAP to Intrexx</div>
+
+<input type="number" min="2019" max="2099" step="1" value=""  id="uploadedDataYear" title="Uploading FC Year" placeholder="FC Year" style="border:1px solid #014A97;margin-bottom: 10px;width: 75px;margin-right: 1%;"/>
+
+<button type="button" class="uploadbtn" id="dataSapToIntrexxbtn" data-toggle="modal" data-target="#myUploadFifthFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button>
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\SAP to Intrexx\SAP to Intrexx template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>Data file template</span>
+</span></a>
+
+<input id="fifthfilename" type="text" onmouseover="fifthUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" /> 
+</div>
+</div>
+<!--Data file SAP to Intrexx end-->
+
+<!--FTE PY starts-->
+<div class="item-container">
+ <div class="attribute-container ftePy-information">   
+  <div class="attribute" style="width: 160px !important">FTE PY</div>
+
+<input type="number" min="2019" max="2099" step="1" value="" id="uploadedFTEPYear" title="Uploading FC Year" placeholder="FC Year" style="border:1px solid #014A97;margin-bottom: 10px;width: 75px;margin-right: 1%;"/>
+
+<button type="button" class="uploadbtn" id="ftePYbtn" data-toggle="modal" data-target="#myUploadSixthFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button> 
+
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\FTE  PY\FTE PY Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>FTE previous year template</span>
+</span></a>
+
+<input id="sixthfilename" type="text" onmouseover="sixthUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" /> 
+</div>
+</div>
+<!--FTE PY ends-->
+
+<!-- FTE CY starts-->
+<div class="item-container">
+ <div class="attribute-container fteCy-information">   
+  <div class="attribute" style="width: 160px !important">FTE CY</div>
+
+<input type="number" min="2019" max="2099" step="1" value="" id="uploadedFTECYear" title="Uploading FC Year" placeholder="FC Year" style="border:1px solid #014A97;margin-bottom: 10px;width: 75px;margin-right: 1%;"/>
+
+<button type="button" class="uploadbtn" id="fteCYbtn" data-toggle="modal" data-target="#myUploadSevFileModal"><span class="glyphicon glyphicon-upload" style="align-items: center; font-size: 18px !important;">&nbsp;Upload</span>  </button> 
+
+
+<a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\template download\FTE CY\FTE CY Template.xlsx" role="button" class="downloadbtn"
+style="text-decoration:none" title="Download Template">
+<span class="glyphicon glyphicon-download-alt" style="align-items: center; font-size: 15px;">
+<span>FTE current year template </span>
+</span></a>
+
+<input id="sevfilename" type="text" onmouseover="sevUpdateTitle(this)" title="" value=""
+style="width:300px !important;align-items:center;text-align: left;justify-content: center;height: 30px; border: 1px solid #014A97;" placeholder="Uploaded File Name" /> 
+
+</div></div>
+
+
+</div>
+<footer class="container">
+  <div style="padding-left: 25px;">
+<button type="submit" class="SubCanformbtn" form="fcExcelUploadFormId" value="Submit">Submit</button>
+<button type="Cancel" class="SubCanformbtn" value="Cancel">Cancel</button> </div>        
+</footer>
+</div>
+</form>
+</form>
+<!-- file upload list ends-->
+
+ <!--Pop up Modal -->
+ <!--SKF to Internal Cost Centre modal-->
+<div id="myUploadFirstFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="firstformFileLg" style="display:none;"></label>
+                <input class="form-control form-control-lg" id="firstformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="firstbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal"  id="firstbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+     <!--SKF to Internal Cost Centre modal ends-->
+
+ <!--CC to CC modal starts-->
+     <div id="myUploadSecFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="secformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="secformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="secbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="secbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+     <!--CC to CC modal starts-->
+
+ <!--CC to SKF modal starts-->
+     <div id="myUploadThirdFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="thirdformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="thirdformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="thirdbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="thirdbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+     <!--CC to SKF modal ends-->
+
+      <!--CC Master modal starts-->
+     <div id="myUploadFourthFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="fourthformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="fourthformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="fourthbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="fourthbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+     <!--CC Master modal ends-->
+
+   <!--Data file SAP to Intrexx modal starts-->
+     <div id="myUploadFifthFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="fifthformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="fifthformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="fifthbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="fifthbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+    <!--Data file SAP to Intrexx modal ends-->
+
+   <!--FTE PY modal starts-->
+     <div id="myUploadSixthFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="sixthformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="sixthformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="sixthbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="sixthbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+    <!-- FTE PY modal ends-->
+
+
+   <!--FTE CY modal starts-->
+     <div id="myUploadSevFileModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">File Upload</h4>  </div>    
+      <div class="modal-body">
+        <div id="popupform">
+        <form action="" method="post" name="UploadFile" class="uploadfilepopup">
+        <fieldset>      
+            <div class="form-group">
+              <label for="sevformFileLg" style="display:none;"></label>
+
+                <input class="form-control form-control-lg" id="sevformFileLg" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            </div> 
+            <div  style="display: inline;">
+            <input name="savebutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="sevbtnUploadPopup" value="Upload" />           
+            <input name="cancelbutton" type="button" class="uploadpopupbtn" data-dismiss="modal" id="sevbtnClosePopup" value="Cancel" />
+            </div>            
+        </fieldset>
+    </form></div></div></div></div></div>
+    <!-- FTE CY modal ends-->
+
+    <!-- Pop up Modal end -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\Js_file\ForecastUploadFile.js"></script>
+</body>
+</html>
