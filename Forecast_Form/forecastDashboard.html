@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="forecastDashboard.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+  <title>Forecast Form</title>
+
+</head>
+
+<body>
+  <!--header basf logo content-->
+<div id="headercontent">
+<table width = "100%" border = "0">
+         
+         <tr>
+            <td colspan = "2" bgcolor = "#014A97">
+                <img src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\BASF_logo.jpg" alt="logo" width="10%" />
+            </td>
+         </tr>
+     </table>
+</div>
+<!-- header basf logo content end-->
+
+<!-- title content-->
+   <div class="container title-information" style="margin-bottom: 2px !important;">
+
+    <div class="title">
+      <p>
+    <span  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;Forecast Tool
+    </p>
+</div>
+</div>   
+<div class="nagivation">
+ <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_ViewInfo\Html_file\ViewInfo.html"  style="text-decoration:none;">Data Lookup</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Html_File\FunctionForecastSummary.html" style="text-decoration:none;">Forecast Summary</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\html_file\ForecastUploadFile.html"  style="text-decoration:none;">Excel Upload</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\forecastDashboard.html" style="text-decoration:none;" class="active">Forecast Adjustment</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Html_file\CostCenterResponsible.html" style="text-decoration:none;">Cost Center Delegates</a>
+ </div>
+<!-- sub title content-->
+  <div class="container subtitle-information" style="margin-bottom:0px !important">
+
+    <div class="subtitle">
+      <p>
+    <span class="glyphicon glyphicon-list-alt"  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Forecast Form
+    </p>
+</div>
+</div>
+
+<!--title content end-->
+
+<!-- top search content -->
+<div class="FCAdjustment_topsearch container">
+<div class="companycodedropdown">
+   <input list="CompanyCode" name="CompanyCode" placeholder="Company code" size="30" 
+   id="textfield1">  
+<datalist id="CompanyCode">
+  <option value="AE01">
+</datalist>
+</div>
+<div class="costcentercodedropdown">
+   <input list="CostCenterCode" name="CostCenterCode" placeholder="Cost Center" size="30" id="textfield2">  
+<datalist id="CostCenterCode">
+  <option value="AE552500">
+</datalist>
+</div>
+<div class="responsibilitydropdown">
+   <input list="Responsibility" name="Responsibility" placeholder="Cost Center Responsible" size="30" id="textfield3">  
+<datalist id="Responsibility">
+  <option value="Dordi, Christopher">
+</datalist>
+</div>
+
+<div class="clear-topdropdown"> 
+  
+<button type="reset" value="Reset" onclick="ResetFilter();" id="resetbtn" class="savbtn">
+<span class="glyphicon glyphicon-repeat" style="align-items: center; font-size: 18px !important;">&nbsp;Reset</span>  </button>   
+</div>
+</div>
+
+<!--top search content end-->
+
+<!-- List content-->
+<form action="" method="post" id="fc_list_formid">
+
+<div class="totalfc-cost container" style="display: inline-block;">
+  <div class="Hint-information" style="float:right;">
+          FX Rate:
+          <br>
+          <p>
+          AED- Eur<br>
+          EGP - Eur<br>
+          SAR - Eur<br>
+        </p>
+  </div>
+  <div class="total-fc-costlabel" id="toptotalfc" style="font-size:18px" >Total Forecast Cost (€) :
+  <span style="display:inline-flex;font-size:18px" >
+          <input class="Topeditable-text" type="text" name="LinerFC" value="300000000001" readonly>  </span>
+   </div>
+   </div> 
+ </div>
+
+ 
+
+<div class="container">
+  <section>
+    <ol class="collection collection-container ">
+      <!-- The first list item is the header of the table -->
+      <li class="item item-container noHover">
+       <div class="attribute-container company-information">          
+            <div class="attribute">Company Code</div>            
+          
+        </div>
+        <div class="attribute-container costcenter-information">          
+            <div class="attribute">Cost Center</div>            
+          
+        </div>                 
+
+        <div class="attribute-container description-information">
+          <div class="attribute">Cost Center Description</div>         
+        </div>        
+
+        <div class="attribute-container pyye-ftecount-information">
+          <div class="attribute">2020 YE FTE (Count)</div>         
+        </div>
+
+        <div class="attribute-container pyye-cost-information">
+          <div class="attribute">2020 YE Actual<br> Cost (€)</div>          
+        </div>
+
+         <div class="attribute-container current-ftecount-information">
+          <div class="attribute">2021 Current FTE (Count)</div>          
+        </div>
+
+        <div class="attribute-container current-ytdcost-information">         
+          <div class="attribute">2021 YTD Actual<br> Cost (€)</div>
+        </div>
+        
+        <div class="attribute-container liner-fc-information">
+          <div class="attribute">2021 Linear<br> FC (€)</div>
+        </div>
+        <div class="attribute-container fte-adjustment-information">
+          <div class="attribute">FTE Adjustment</div>
+        </div>
+        <div class="attribute-container fc-adjustment-information">
+          <div class="attribute"> Linear FC(+/-)<br>Adjustment (€)</div>
+        </div>
+        <div class="attribute-container proposedfte-information">
+          <div class="attribute"> 2022 Proposed FTE</div> 
+          </div> 
+        <div class="attribute-container proposedfc-information">
+          <div class="attribute"> 2022 Proposed<br> FC (€)</div> 
+          </div>       
+
+        <div class="attribute-container comment-information">
+          <div class="attribute"> Comment</div>
+        </div>
+       
+      </li>
+      <!-- The rest of the items in the list are the actual data -->
+      
+      <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container costcenter-information">          
+            <div class="attribute" data-name="Cost Center Code">AE552500</div>
+          </div>
+
+        <div class="attribute-container description-information">
+          <div class="attribute" data-name="Description">Project Leon</div>
+        </div>
+
+         <div class="attribute-container pyye-ftecount-information">
+          <div class="attribute" data-name="PY YE FTE Count">2</div>
+        </div>
+
+        <div class="attribute-container pyye-cost-information">
+          <div class="attribute" data-name="PY YE Cost" id="preYearFC-cost">600</div>
+        </div>
+
+        <div class="attribute-container current-ftecount-information">          
+          <input type="text" id="curFTEcountId" name="CurrentFTE" class="attribute editable-text" value="1" readonly>
+        </div>
+
+        <div class="attribute-container current-ytdcost-information">          
+          <div class="attribute" data-name="Curent YTD Cost">1,000.00</div>
+        </div>
+        
+        <div class="attribute-container liner-fc-information">
+          <input type="text" id="linerFcId" name="LinerFC" class="attribute editable-text" value="1,028.57" readonly>        
+        </div>
+        
+        <div class="attribute-container fte-adjustment-information">
+          <input type="text" name="FTEadjustment" id="fteAdjust" class="attribute editable-text "  onkeyup="updateProsedFTE()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); ">         
+        </div>
+
+        <div class="attribute-container fc-adjustment-information">
+          <input type="text" name="FCadjustment" id="fcAdjust" class="attribute editable-text" value="" readonly>         
+        </div>
+
+        <div class="attribute-container proposedfte-information">
+          <input type="text" name="ProposedFTE" id="proposedfte" class="attribute editable-text" value="" readonly>         
+        </div>
+
+        <div class="attribute-container proposedfc-information ">
+          <input type="text" name="ProposedFCadjustment" id="proposedfc" class="attribute editable-text" value="" readonly>         
+        </div>
+
+        <div class="attribute-container comment-information "style="cursor: pointer">
+          <a href="#" data-toggle="modal" data-target="#myAddModal" class="openCommentPopup">
+          <span class="glyphicon glyphicon-plus-sign" style="align-items: center; font-size: 15px;">
+            <input type="text" name="Comment" class="attribute editable-text" onmouseover="updateTitle(this)" id="cmt_with_tooltip" value="" title="" />
+          </span>
+        </a>
+               
+        </div>
+      </li>
+      
+      
+      <li class="item item-container data-container">
+        
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container costcenter-information">          
+            <div class="attribute" data-name="Cost Center Code">AE552500</div>
+          </div>
+
+      
+        <div class="attribute-container description-information">
+          <div class="attribute" data-name="Description">Project Leon</div>
+        </div>
+
+        <div class="attribute-container pyye-ftecount-information">
+          <div class="attribute" data-name="PY YE FTE Count">2</div>
+        </div>
+
+        <div class="attribute-container pyye-cost-information">
+          <div class="attribute" data-name="PY YE Cost">800</div>
+        </div>
+
+        <div class="attribute-container current-ftecount-information">
+          <input type="text" id="curFTEcountId" name="CurrentFTE" class="attribute editable-text" value="1" readonly>
+        </div>
+
+        <div class="attribute-container current-ytdcost-information">          
+          <div class="attribute" data-name="Curent YTD Cost">1,500.00</div>
+        </div>
+        
+        <div class="attribute-container liner-fc-information">
+          <input type="text" id="linerFcId"name="LinerFC" class="attribute editable-text" value="1,371.43" readonly>
+        </div>
+        
+        <div class="attribute-container fte-adjustment-information">
+          <input type="text" name="FTEadjustment" id="fteAdjust" class="attribute editable-text"  onkeyup="updateProsedFTE()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); ">      
+        </div>
+
+        <div class="attribute-container fc-adjustment-information">
+          <input type="text" name="FCadjustment" id="fcAdjust" class="attribute editable-text" value="" readonly>         
+        </div>
+
+         <div class="attribute-container proposedfte-information">
+          <input type="text" name="ProposedFTE" id="proposedfte" class="attribute editable-text" value="" readonly>         
+        </div>
+
+        <div class="attribute-container proposedfc-information">
+          <input type="text" name="ProposedFCadjustment" id="proposedfc" class="attribute editable-text" value="" readonly>         
+        </div>
+        <div class="attribute-container comment-information">
+          <a href="#" data-toggle="modal" data-target="#myAddModal" class="openCommentPopup">
+           <span class="glyphicon glyphicon-plus-sign" style="align-items: center; font-size: 15px;">        
+          <input style="font-size: 16px !important"type="text" name="Comment" class="attribute editable-text" id="cmt_with_tooltip" value=""/>  </span>
+          </a>       
+        </div>
+      </li>
+    </ol>
+  </section>
+</div>
+<footer class="container">
+
+<button type="submit" class="SubCanformbtn" id="FCFormListSubmitId" form="fc_list_formid" value="Submit">Submit</button>
+<button type="Cancel" class="SubCanformbtn" id="FCFormListCancelId" value="Cancel">Cancel</button>
+
+         
+</footer>
+</form>
+<!--List content end -->
+
+  <!--Pop up Modal -->
+<div id="myAddModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Forecast adjustment</h4>
+      </div>
+      <div class="modal-body">
+        <div id="popupform">
+    <form action="" method="post" name="Savecomment" class="commentpopup">
+        <fieldset>
+            </div> 
+            <div class="form-group">
+                <label for="Others">Others:</label>
+                <input name="Others" id="Others" rows="1" cols="10" onkeyup="sum()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                <div class="form-group commenttextfield">
+                <label for="Comment" style="width:80px">Comment:</label>
+                <textarea style="font-size:15px" class=""rows="4" cols="30" id="Comment" placeholder="Enter comments" value="" >
+                </textarea>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="Travel">Travel:</label>
+                <input name="Travel" id="Travel" onkeyup="sum()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+            </div>
+            <div class="form-group">
+                <label for="Personal">Personal:</label>
+                <input name="Personal" id="Personal" onkeyup="sum()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+            </div>
+             
+            <div class="form-group">
+                <label for="TotFCAdjustment">Total Forecast Adjustment:</label>
+                <input   type="text" name="TotFCAdjustment" readonly id="TotFCAdjustment"/>
+            </div>
+              <input name="savebutton" type="button" class="button savbtn" data-dismiss="modal" id="Submit" value="Save" />
+            <input name="cancelbutton" type="button" class="button savbtn" data-dismiss="modal" id="btnClosePopup" value="Cancel" />
+            <div class="form-group">
+
+            <button type="button" value="Add" onclick="AddFCbtn();" id="addbtn" class="addbtn" style="width: 90px; height: 25px;">
+              <span class="glyphicon glyphicon-plus" style="align-items: center; font-size: 14px !important;">&nbsp;Add</span>  </button> 
+              <button type="button" value="Minus" onclick="SubFCbtn();" id="minusbtn" class="minusbtn" style="width: 90px; height: 25px;">
+              <span class="glyphicon glyphicon-minus" style="align-items: center; font-size: 14px !important;">&nbsp;Minus</span>  </button>  
+            </div>      
+           
+        </fieldset>
+         
+    </form>
+ 
+  </div>
+  </div>
+  </div>
+  </div>
+   <!-- Pop up Modal end -->
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="forecastDashboard.js"></script>
+</body>
+
+</html>
