@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Css_file\CostCenterResponsible.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+  <title>Cost Center Responsible</title>
+
+</head>
+
+<body>
+  <!--header basf logo content-->
+<div id="headercontent">
+<table width = "100%" border = "0">
+         
+         <tr>
+            <td colspan = "2" bgcolor = "#014A97">
+                <img src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\image\BASF_logo.jpg" alt="logo" width="10%" />
+            </td>
+         </tr>
+     </table>
+</div>
+<!-- header basf logo content end-->
+
+<!-- title content-->
+   <div class="container title-information" style="margin-bottom: 2px !important;">
+
+    <div class="title">
+      <p>
+    <span  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;Forecast Tool
+    </p>
+</div>
+</div>   
+<div class="nagivation">
+   <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_ViewInfo\Html_file\ViewInfo.html"  style="text-decoration:none;">Data Lookup</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Html_File\FunctionForecastSummary.html" style="text-decoration:none;">Forecast Summary</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\html_file\ForecastUploadFile.html"  style="text-decoration:none;">Excel Upload</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Forecast_Form\html_file\forecastDashboard.html" style="text-decoration:none;" >Forecast Adjustment</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Html_file\CostCenterResponsible.html" style="text-decoration:none;"  class="active">Cost Center Delegates</a>
+ </div>
+<!-- sub title content-->
+  <div class="container subtitle-information" style="margin-bottom:0px !important">
+
+    <div class="subtitle">
+      <p>
+    <span class="glyphicon glyphicon-list-alt"  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Cost Center Delegates
+    </p>
+</div>
+</div>
+
+<!--title content end-->
+
+<!-- List content-->
+<form action="" method="post" id="cc_responsibleList_formid">
+
+<div class="container">
+  <section>
+    <ol class="collection collection-container ">
+      <!-- The first list item is the header of the table -->
+      <li class="item item-container noHover">
+       <div class="attribute-container company-info">          
+            <div class="attribute">Company Code</div>            
+          
+        </div>
+        <div class="attribute-container basf-org-info">          
+            <div class="attribute">BASF Organization</div>            
+          
+        </div>                 
+
+        <div class="attribute-container dept-info">
+          <div class="attribute">Department</div>         
+        </div>        
+
+        <div class="attribute-container person-respinsible-info">
+          <div class="attribute">Person Responsible</div>         
+        </div>
+
+        <div class="attribute-container delegates-info">
+          <div class="attribute">Delegates</div>          
+        </div>
+
+        <div class="attribute-container action-info">
+          <div class="attribute"> Action</div>
+        </div>
+       
+      </li>
+
+       <!-- The rest of the items in the list are the actual data -->
+      
+      <li class="item item-container data-container">
+        <div class="attribute-container company-info">          
+            <div class="attribute" data-name="Company Code">AE01</div>
+          </div>
+        <div class="attribute-container basf-org-info">          
+            <div class="attribute" data-name="BASF Org">CL/E</div>
+          </div>
+
+        <div class="attribute-container dept-info">
+          <div class="attribute" data-name="Department">Legal</div>
+        </div>
+
+          <div class="attribute-container person-respinsible-info">
+          <input type="text" id="PersonResponsibleId" name="PersonResponsible" class="attribute editable-text" value="Schulz, Ulf Gregor" readonly="true">          
+        </div>
+
+        <div class="attribute-container delegates-info">
+          <input type="text" id="delegatesId" name="Delegates" class="attribute editable-text" value="Milana" readonly="true" >         
+        </div>
+
+         <div class="attribute-container action-info "style="cursor: pointer ;justify-content: flex-end;">.
+          <!-- &nbsp; &nbsp; &nbsp;
+          <a href="#" data-toggle="modal" data-target="#myAddModal" class="openCommentPopup" style="text-decoration: none;">
+          <span class="glyphicon glyphicon-plus-sign" style="align-items: center; font-size: 18px;">Add         
+          </span>
+        </a>--->
+
+        &nbsp; &nbsp; &nbsp;
+        <a href="#" class="" style="text-decoration: none;" id="editId">
+            <button class="editbtn"><span class="glyphicon glyphicon-edit" style="align-items: center; font-size: 18px;justify-content: center;">Edit </span></button> </a>               
+        </div>
+      </li>
+      
+      
+       <li class="item item-container data-container">
+        <div class="attribute-container company-info">          
+            <div class="attribute" data-name="Company Code">AE01</div>
+          </div>
+        <div class="attribute-container basf-org-info">          
+            <div class="attribute" data-name="BASF Org">CL/E</div>
+          </div>
+
+        <div class="attribute-container dept-info">
+          <div class="attribute" data-name="Department">Legal</div>
+        </div>
+
+         <div class="attribute-container person-respinsible-info">
+          <input type="text" id="PersonResponsibleId" name="PersonResponsible" class="attribute editable-text" value="Schulz, Ulf Gregor" readonly="true">          
+        </div>
+
+        <div class="attribute-container delegates-info">
+          <input type="text" id="delegatesId" name="Delegates" class="attribute editable-text" value="Milana" readonly="true">         
+        </div>
+        
+        <div class="attribute-container action-info "style="cursor: pointer ;justify-content: flex-end;">.
+          <!-- &nbsp; &nbsp; &nbsp;
+          <a href="#" data-toggle="modal" data-target="#myAddModal" class="openCommentPopup" style="text-decoration: none;">
+          <span class="glyphicon glyphicon-plus-sign" style="align-items: center; font-size: 18px;">Add         
+          </span>
+        </a>--->
+
+         &nbsp; &nbsp; &nbsp;
+        <a href="#" class="" style="text-decoration: none;" id="editId">
+            <button class="editbtn"><span class="glyphicon glyphicon-edit" style="align-items: center; font-size: 18px; justify-content: center;">Edit </span></button></a>                 
+        </div>
+      </li>
+
+    </ol>
+  </section>
+</div>
+</form>
+
+<footer class="container">
+<button type="submit" class="SubCanformbtn" id="CCFormResponsibleListSubmitId" form="cc_responsibleList_formid" value="Submit">Submit</button>
+<button type="Cancel" class="SubCanformbtn" id="CCFormResponsibleListCancelId" value="Cancel">Cancel</button>         
+</footer>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Js_file\CostCenterResponsible.js"></script>
+</body>
+</html>
