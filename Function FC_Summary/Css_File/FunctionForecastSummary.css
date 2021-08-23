@@ -1,0 +1,278 @@
+/*common css start*/
+    #headercontent img{    
+ margin: 0px 0px 0px 100px;
+    }
+
+    .title-information
+    {
+      
+      border-bottom: 2px solid #014A97;
+      height: 60px;
+      margin-top: 10px;
+       padding: 2px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 20pt;
+    }
+    .title{
+       margin-left: 2px ;
+       background-color: #dcdcdc;
+       padding-left:5px;
+     
+    }
+
+    .glyphicon {
+    display: flex !important;
+    }
+
+    .SubCanformbtn
+{
+     width: 150px;
+    background-color: white; 
+    color: #014A97; 
+    border: 2px solid #014A97;
+    float: left;
+    transition-duration: 0.4s;
+     font-size: 12px;
+     padding: 12px 28px;
+     margin-right: 5% !important;
+     border-radius: 10px;
+     align-items: center
+}
+button:focus {
+  background-color: #014A97;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+footer
+{
+font-size: 18px !important;
+display: inline-flex; 
+width: 600px ;
+height: 150px;
+float: left;
+}
+.container{
+     width: 1230px !important;
+  margin: 10px 20px 10px 20px !important;
+}
+ .collection {
+        border-top: 2px solid #014A97;        
+    }
+
+ .collection-container>.item-container:first-child .attribute {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: initial;
+    overflow: auto;
+    white-space: normal;
+    color: #004a96;   
+    font-size: 10px !important;
+    font-weight: bold;
+    height: 32px;
+    width: 120px;
+
+    }
+    ol.collection {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+ .noHover{
+    pointer-events: none;
+        border-bottom: 2px solid #014A97;
+
+}
+
+.nagivation {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nagivation a {
+    color: white; 
+    border: 1px solid #014A97;
+    background-color: #014A97; ;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+ 
+}
+
+.nagivation a.active {
+  color: white; 
+    border: 1px solid #014A97;
+    background-color: #4f77ba;
+; ;
+}
+
+.nagivation a:hover:not(.active) {background-color: #00397d;color: white;}
+ .subtitle-information
+    {
+      border-bottom: 1px solid #014A97;
+      height: 40px;
+      margin-top: 10px;
+       padding: 2px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 12pt;
+    }
+    .subtitle{
+       margin-left: 2px ;
+       padding-left:5px;     
+    }
+/*common css ends*/
+@media screen and (max-width: 736px) {
+    .collection-container {
+        display: grid;       
+        grid-gap: 20px;
+    }
+
+}
+
+@media screen and (max-width:580px) {
+    .collection-container {
+        display: grid;
+       /* grid-template-columns: 1fr;*/
+
+    }
+}
+@media screen and (min-width: 737px) {
+    /* The maximum column width, that can wrap */
+    .item-container {
+        display: grid;
+        grid-template-columns:   1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+       
+    }
+   
+
+}
+
+    .item-container:hover {
+        background-color: #f0f0f0;
+    }
+
+.item {        
+        border-radius: 2px;
+        padding: 10px;
+    }
+
+    .attribute-container {
+        display: grid; 
+    }
+
+   .attribute {
+        /*border-right: 1px solid gray;*/
+         display: grid;
+        padding: 0px;
+        overflow: auto;
+        white-space: normal;
+        text-overflow: ellipsis;
+        height: 32px;
+        width: 90px;
+        border: none;
+       
+}
+
+
+        
+    }
+
+      .costCenter-info{
+        --column-width-min: 10em;
+    }
+    .company-info {
+        --column-width-min: 10em;
+    }
+
+    .function-info{
+        --column-width-min: 10em;
+    }
+    .pyye-actualcost-info
+    {
+    --column-width-min: 10em;
+    }
+    .current-ytdcost-info
+    {
+     --column-width-min: 10em;
+    }
+    .liner-fc-info
+    {
+     --column-width-min: 10em;
+    }
+    .forecasted-costadjust-info
+    {
+     --column-width-min: 10em;
+    }
+    .proposed-fc-afteradjust-info
+    {
+     --column-width-min: 10em;
+    }
+    .total-fc-aftermarkup-info
+    {
+     --column-width-min: 10em;
+    }
+    .{
+        display: flex;
+ 
+  float: right !important;
+}
+.markUp
+{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: right;
+  width: 450px;
+  margin-bottom: 20px  ; 
+  align-items: center;
+  align-content: center;
+   margin-left: 55px ;
+  margin-right: 50px;
+}
+.sublist 
+{
+     display: grid;
+     grid-template-columns: 1.5fr 4.8fr 1fr 1fr;
+     grid-template-rows: 30px;
+     text-align: right ;
+     grid-gap: 20px;
+     background-color: #014A97;
+     color: white;
+     font-weight: bold;
+     justify-content: center;
+     align-items: center;
+    
+       
+}
+
+.data-container div
+{
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+    text-align: right !important;
+}
+.data-container{
+  border-bottom: 1px solid lightgray;
+}
+
+.editable-text
+{
+   text-align: right;
+}
+.Topeditable-text
+{
+    text-align: right;
+    background-color: #014A97; 
+    color: white;
+    height: 30px;
+    text-align: right !important;
+    justify-content: flex-end !important;
+    align-items: center Impoirtant;
+}
+
+

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Css_File\FunctionForecastSummary.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<title>Function Forecast Summary</title>
+
+</head>
+
+<body>
+ <!--header basf logo content-->
+<div id="headercontent">
+<table width = "100%" border = "0">
+         
+         <tr>
+            <td colspan = "2" bgcolor = "#014A97">
+                <img src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\image\BASF_logo.jpg" alt="logo" width="10%" />
+            </td>
+         </tr>
+     </table>
+</div>
+<!-- header basf logo content end-->
+
+<!-- title content-->
+   <div class="container title-information" style="margin-bottom: 2px !important;">
+
+    <div class="title">
+      <p>
+    <span  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;Forecast Tool
+    </p>
+</div>
+</div>   
+<div class="nagivation">
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_ViewInfo\Html_file\ViewInfo.html"  style="text-decoration:none;">Data Lookup</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Html_File\FunctionForecastSummary.html" style="text-decoration:none;" class="active">Forecast Summary</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\FC_UploadFile\html_file\ForecastUploadFile.html"  style="text-decoration:none;" >Excel Upload</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Forecast_Form\html_file\forecastDashboard.html" style="text-decoration:none;" >Forecast Adjustment</a>
+  <a href="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\CostCenter_Responsible\Html_file\CostCenterResponsible.html" style="text-decoration:none;">Cost Center Delegates</a>
+ </div>
+<!-- sub title content-->
+  <div class="container subtitle-information" style="margin-bottom:0px !important">
+
+    <div class="subtitle">
+      <p>
+    <span class="glyphicon glyphicon-list-alt"  style="height:5px; padding-top: 15px;"></span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Forecast Summary
+    </p>
+</div>
+</div>
+
+<!--title content end-->
+
+<!-- List content-->
+<form action="" method="post" id="fc_summary_formid">
+
+<div class="container" style="padding-right: 0px !important;padding-left: 0px !important;">
+
+<div class="markUp" id="markUpId" style="font-size:18px" >Mark up: ( Overall) % : &nbsp;
+  <span style="display:inline-flex;font-size:18px" >
+          <input class="markUp-editable-text" type="text" name="MarkUp" value="" onchange="updateMarkup()" id="markupTextField" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">  </span>
+   </div>
+   <label for="ComCodelist" style="font-size:12px; font-weight: normal;">Filter by Company Code</label>
+  <select name="ComCodeList" id="ComCodelist">
+    <option value="All">All</option>
+    <option value="AE01">AE01</option>
+    <option value="AE02">AE02</option>
+  </select>
+ <label for="deptlist"  style="font-size:12px; font-weight: normal;">Filter by Department</label>
+  <select name="DeptList" id="deptlist" >
+    <option  value="All">All</option>
+    <option  value="Corp Comm">Corp Comm</option>
+    <option  value="EHS">EHS</option>
+    <option  value="Legal">Legal</option>
+    <option  value="General Management">General Management</option>
+    <option  value="Supply Chain">Supply Chain</option>
+    <option  value="HR">HR</option>
+    <option  value="Procurement">Procurement</option>
+    <option  value="FM">FM</option>
+    <option  value="Business Management">Business Management</option>
+    <option  value="Finance">Finance</option>
+    <option  value="IT">IT</option>
+  </select>
+  <section>
+    <ol class="collection collection-container ">
+      <!-- The first list item is the header of the table -->
+      <li class="item item-container noHover">
+       <div class="attribute-container company-info">          
+            <div class="attribute">Company Code</div>           
+</div>
+        <div class="attribute-container function-info ">          
+            <div class="attribute">Function</div>         
+          
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute">Cost Center</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute">PY Ye Actual Cost (€)</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute">Current YTD Actual Cost (€)</div>          
+        </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute">Linear FC (€)</div>          
+        </div>
+
+        <div class="attribute-container forecasted-costadjust-info">         
+          <div class="attribute">Forecasted cost Adjustment (€)</div>
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <div class="attribute">Proposed Forecast Cost After Adjustment (€)</div>
+        </div>
+        <div class="attribute-container total-fc-aftermarkup-info">
+          <div class="attribute">Total FC after Mark Up (€)</div>
+        </div>
+      </li>
+      <!-- loop for function starts-->
+      <div class="filterDiv showAE01" id="showIT">
+      <ol style="padding-left: 0px !important;">
+        <div class="sublist">
+    <div class="dept">IT</div>
+<div><input type="text" readonly id="sum-FCCostAdjustdata-1" class="attribute Topeditable-text" value="" style="margin-left: 620px;"/></div>
+<div><input type="text" readonly id="sum-ProposedFCAFAdjustdata-1" class="attribute Topeditable-text" value="" style="margin-left: 27px;" /></div>
+<div><input type="text" readonly id="sum-totFCAFMarkupdata-1" class="attribute Topeditable-text" value=""style="margin-left: 10px;" /></div>   
+  </div>
+  <!-- inner loop for data corresponding to function starts-->
+    <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+        <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-1" name="FcCostAdjust" class="attribute editable-text" value="100" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-1" name="ProposedFCAFAdjust" class="attribute editable-text" value="1,100" readonly> 
+         </div>       
+
+        <div class="attribute-container total-fc-aftermarkup-info">
+          <input type="text" id="totFCAFMarkupdata-1" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+        
+    </li>
+      <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+         <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-1" name="FcCostAdjust" class="attribute editable-text" value="200" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-1" name="ProposedFCAFAdjust" class="attribute editable-text" value="2,100" readonly> 
+         </div>
+
+        <div class="attribute-container total-fc-aftermarkup-info" style="border: none !important;">
+          <input type="text" id="totFCAFMarkupdata-1" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+    </li>
+      <!-- inner loop for data corresponding to function ends-->
+</ol>
+</div>
+
+
+<!-- second function loop starts-->
+<div class="filterDiv showAE01" id="showHR">
+  <ol style="padding-left: 0px !important;">
+        <div class="sublist">
+    <div class="dept">HR</div>
+<div><input type="text" readonly id="sum-FCCostAdjustdata-2" class="attribute Topeditable-text" value="" style="margin-left: 620px;"/></div>
+<div><input type="text" readonly id="sum-ProposedFCAFAdjustdata-2" class="attribute Topeditable-text" value="" style="margin-left: 27px;"/></div>
+<div><input type="text" readonly id="sum-totFCAFMarkupdata-2" class="attribute Topeditable-text" value="" style="margin-left: 10px;"/></div>   
+  </div>
+  <!-- inner loop for data corresponding to function starts-->
+    <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+        <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-2" name="FcCostAdjust" class="attribute editable-text" value="300" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-2" name="ProposedFCAFAdjust" class="attribute editable-text" value="3,100" readonly> 
+         </div>       
+
+        <div class="attribute-container total-fc-aftermarkup-info">
+          <input type="text" id="totFCAFMarkupdata-2" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+        
+    </li>
+      <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE01</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+         <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-2" name="FcCostAdjust" class="attribute editable-text" value="900" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-2" name="ProposedFCAFAdjust" class="attribute editable-text" value="4,100" readonly> 
+         </div>
+
+        <div class="attribute-container total-fc-aftermarkup-info" style="border: none !important;">
+          <input type="text" id="totFCAFMarkupdata-2" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+
+    </li>
+      <!-- inner loop for data corresponding to function ends-->
+</ol>
+
+</div>
+
+<!-- loop for second company code starts-->
+ <div class="filterDiv showAE02" id="showIT">
+      <ol style="padding-left: 0px !important;">
+        <div class="sublist">
+    <div class="dept">IT</div>
+<div><input type="text" readonly id="sum-FCCostAdjustdata-3" class="attribute Topeditable-text" value="" style="margin-left: 620px;"/></div>
+<div><input type="text" readonly id="sum-ProposedFCAFAdjustdata-3" class="attribute Topeditable-text" value="" style="margin-left: 27px;" /></div>
+<div><input type="text" readonly id="sum-totFCAFMarkupdata-3" class="attribute Topeditable-text" value=""style="margin-left: 10px;" /></div>   
+  </div>
+  <!-- inner loop for data corresponding to function starts-->
+    <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE02</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+        <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-3" name="FcCostAdjust" class="attribute editable-text" value="800" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-3" name="ProposedFCAFAdjust" class="attribute editable-text" value="1,800" readonly> 
+         </div>       
+
+        <div class="attribute-container total-fc-aftermarkup-info">
+          <input type="text" id="totFCAFMarkupdata-3" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+        
+    </li>
+      <li class="item item-container data-container">
+        <div class="attribute-container company-information">          
+            <div class="attribute" data-name="Company">AE02</div>
+          </div>
+        <div class="attribute-container function-info" >          
+            <div class="attribute" style="visibility: hidden;" data-name="Function">Function</div>            
+        </div>                 
+
+        <div class="attribute-container costcenter-info">
+          <div class="attribute" data-name="CostCenter">AE552500</div>         
+        </div>        
+
+        <div class="attribute-container pyye-actualcost-info">
+          <div class="attribute" data-name="PYYEActualCost">1,100.00</div>         
+        </div>
+
+        <div class="attribute-container current-ytdcost-info">
+          <div class="attribute" data-name="CurrentYTDActualCost">1,100.00</div>
+       </div>
+
+         <div class="attribute-container liner-fc-info">
+          <div class="attribute" data-name="LinearFC">1,100.00</div>          
+        </div>
+
+         <div class="attribute-container forecasted-costadjust-info"> 
+        <input type="text" id="fcCostAdjustdata-3" name="FcCostAdjust" class="attribute editable-text" value="900" readonly> 
+        </div>
+        
+        <div class="attribute-container proposed-fc-afteradjust-info">
+          <input type="text" id="proposedFCAFAdjustdata-3" name="ProposedFCAFAdjust" class="attribute editable-text" value="2,900" readonly> 
+         </div>
+
+        <div class="attribute-container total-fc-aftermarkup-info" style="border: none !important;">
+          <input type="text" id="totFCAFMarkupdata-3" name="TotalFCAfterMarkup" class="attribute editable-text" value="" readonly>
+        </div>
+    </li>
+      <!-- inner loop for data corresponding to function ends-->
+</ol>
+</div>
+<!--Loop for second company code ends-->
+
+ <div class="sublist">
+    <div class="dept">Grand Total</div>
+<div><input type="text" readonly id="GT-FCCostAdjustdata" class="attribute Topeditable-text" value="" style="margin-left: 620px;"/></div>
+<div><input type="text" readonly id="GT-ProposedFCAFAdjustdata" class="attribute Topeditable-text" value="" style="margin-left: 27px;" /></div>
+<div><input type="text" readonly id="GT-totFCAFMarkupdata" class="attribute Topeditable-text" value="" style="margin-left: 10px;"/></div>   
+  </div>
+  <!-- loop for function ends-->
+      </ol>
+  </section>
+</div>
+
+<footer class="container">
+<button type="submit" class="SubCanformbtn" id="FCFormSummarySubmitId" form="fc_summary_formid" value="Submit">Submit</button>
+<button type="Cancel" class="SubCanformbtn" id="FCFormSummaryCancelId" value="Cancel">Cancel</button>
+</footer>
+
+</form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="C:\Users\ManohaP\OneDrive - BASF\Desktop\forecast\Function FC_Summary\Js_File\FunctionForecastSummary.js"></script>
+</body>
+</html>
